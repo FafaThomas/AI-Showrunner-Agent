@@ -35,6 +35,7 @@ def build_librarian_prompt(
     theme,
     editorial_brief,
     programs,
+    feedback=None,
 ):
     """
     Construct the Librarian prompt.
@@ -44,6 +45,23 @@ def build_librarian_prompt(
         p["program_key"]
         for p in programs
     ]
+
+    feedback_text = ""
+
+    if feedback:
+
+        feedback_text = f"""
+
+==================================================
+PREVIOUS EDITORIAL FEEDBACK
+==================================================
+
+The Editorial Board rejected the previous catalog.
+
+Address the following concerns:
+
+{feedback}
+"""
 
     prompt_path = (
         Path(__file__).parent.parent
@@ -66,6 +84,8 @@ def build_librarian_prompt(
         ),
 
         valid_program_keys=valid_program_keys,
+
+        feedback=feedback_text,
     )
 
 def build_scheduler_prompt(
@@ -131,4 +151,39 @@ Revise the schedule while preserving the editorial vision.
         slot_count=len(slots),
 
         revision_notes=revision_notes,
+    )
+
+def build_editorial_review_prompt(
+    theme,
+    editorial_brief,
+    approved_programs,
+    schedule,
+):
+    from pathlib import Path
+    import json
+
+    prompt_path = (
+        Path(__file__).parent.parent
+        / "prompts"
+        / "editorial_review_prompt.txt"
+    )
+
+    template = prompt_path.read_text(
+        encoding="utf-8"
+    )
+
+    return template.format(
+        theme=theme,
+
+        editorial_brief=editorial_brief,
+
+        approved_programs=json.dumps(
+            approved_programs,
+            indent=2,
+        ),
+
+        schedule=json.dumps(
+            schedule.model_dump(),
+            indent=2,
+        ),
     )

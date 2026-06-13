@@ -18,6 +18,7 @@ def curate_programs(
     theme,
     editorial_brief,
     programs,
+    feedback=None,
 ):
     """
     Curate a shortlist of programs
@@ -30,6 +31,8 @@ def curate_programs(
         editorial_brief=editorial_brief,
 
         programs=programs,
+
+        feedback=feedback,
     )
 
     raw_response = ollama.chat(

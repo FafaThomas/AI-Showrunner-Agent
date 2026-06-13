@@ -47,18 +47,53 @@ Never invent program IDs.
 TASK
 ==================================================
 
-Recommend between 12 and 20 programs that best align
-with the editorial vision.
+Recommend between 12 and 20 programs that best embody
+the editorial vision.
 
-Think like a programming archivist.
+You are NOT maximizing variety.
+
+You are preserving the integrity of the Showrunner's vision.
+
+Your PRIMARY responsibility is thematic fidelity.
+
+Variety is SECONDARY.
+
+Ask yourself:
+
+"Would this program strengthen the audience's experience
+of the promised television day?"
+
+If the answer is no, exclude it.
 
 Select programs that:
 
-- Support the theme
-- Reflect the editorial brief
-- Offer variety
-- Provide enough diversity for scheduling
-- Could realistically be used throughout the day
+- Directly reinforce the theme.
+- Support the emotional goals described in the editorial brief.
+- Maintain a coherent identity throughout the day.
+- Provide enough flexibility for scheduling without diluting the vision.
+- Could realistically exist within the same branded programming event.
+
+You are allowed to exclude otherwise popular,
+high-performing, or diverse programs if they weaken
+the editorial vision.
+
+==================================================
+EDITORIAL FEEDBACK
+==================================================
+
+{feedback}
+
+==================================================
+EDITORIAL TEST
+==================================================
+
+Before finalizing your recommendations, ask:
+
+"If a viewer watched only these approved programs,
+would they genuinely describe the day using the
+Showrunner's theme and editorial brief?"
+
+If not, revise the catalog.
 
 ==================================================
 OUTPUT FORMAT
@@ -88,3 +123,31 @@ CRITICAL RULES
 - Never invent program IDs.
 - Return valid JSON.
 - JSON ONLY.
+
+- The Showrunner's editorial vision is law.
+- Thematic fidelity takes precedence over diversity.
+- Do NOT include programs simply to increase genre variety.
+- Do NOT include programs that contradict or weaken the editorial vision.
+- A smaller, more coherent catalog is preferable to a broader but diluted one.
+
+Example:
+
+If the theme is:
+
+"Family-Friendly Fantasy Adventures"
+
+Strong Fits:
+- Fantasy
+- Adventure
+- Family-oriented prestige dramas
+- Imaginative storytelling
+- Inspirational journeys
+
+Weak Fits:
+- Breaking News
+- Public Affairs
+- Sports specials
+- Procedural crime dramas
+- Reality programming
+
+Exclude weak fits even if they are otherwise high quality.

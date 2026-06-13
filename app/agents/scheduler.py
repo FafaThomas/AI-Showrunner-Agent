@@ -19,6 +19,7 @@ def generate_schedule(
     editorial_brief,
     slots,
     programs,
+    feedback=None,
 ):
     """
     Generate a full broadcast schedule.
@@ -29,6 +30,7 @@ def generate_schedule(
         editorial_brief=editorial_brief,
         slots=slots,
         programs=programs,
+        feedback=feedback,
     )
 
     raw_response = ollama.chat(

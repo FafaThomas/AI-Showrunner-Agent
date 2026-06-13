@@ -1,298 +1,296 @@
-# 📺 AI Showrunner Agent
+# 📺 AI Showrunner Agent v2
 
-An experimental multi-stage AI system that simulates the daily operations of a television network by generating editorially curated broadcast schedules using Large Language Models (LLMs), historical audience insights, and deterministic validation.
+> A multi-agent television network simulation where AI executives collaborate, argue, revise, and ultimately decide what goes on air.
 
 ---
 
 ## Overview
 
-AI Showrunner Agent explores the intersection of:
+AI Showrunner Agent is a multi-agent system that simulates how a real television network builds its daily broadcast schedule.
 
-* Artificial Intelligence
-* Television Programming
-* Data Engineering
-* Prompt Engineering
-* Multi-stage Decision Systems
+Instead of relying on a single prompt to generate a schedule, the system divides responsibilities among specialized agents that each represent a department within a television organization.
 
-The project began as an attempt to generate realistic television scheduling datasets for analytics and evolved into an AI-driven scheduling system capable of proposing, validating, and reviewing an entire day of programming.
+The result is not simply a generated lineup.
 
----
+It is a negotiation process.
 
-## Features
-
-### 🎬 Synthetic Broadcast Dataset Generation
-
-Generate years of mock television operational data including:
-
-* Program scheduling
-* Commercial placement
-* Audience viewership metrics
-* Retention and drop-off rates
-* Advertising revenue estimates
-
-Generated data is stored in PostgreSQL for later analysis.
+Creative vision, content availability, scheduling constraints, executive oversight, and editorial compromises all shape the final broadcast day.
 
 ---
 
-### 🧠 AI Showrunner
+## The Problem
 
-Using a local LLM through Ollama, the Showrunner:
-
-* Determines a daily editorial theme
-* Considers network identity
-* Incorporates historical viewing insights
-* Builds a complete 24-hour broadcast schedule
-* Provides editorial reasoning for every programming decision
-
----
-
-### 🏛 Structural Validation
-
-Schedules undergo deterministic validation to ensure:
-
-* Exactly 24 slots are returned
-* All slot identifiers exist
-* All selected programs exist
-* Duplicate slot assignments are prevented
-* JSON responses conform to the expected schema
-
-This prevents the LLM from generating structurally invalid schedules.
-
----
-
-### 👔 Editorial Review Board
-
-Beyond technical correctness, schedules are evaluated for quality.
-
-Examples include:
-
-* Prime Time consistency
-* Theme alignment
-* Morning programming suitability
-* Genre balance
-* Audience appropriateness
-
-The goal is to answer:
-
-> "Should this schedule actually air?"
-
-rather than merely:
-
-> "Can this schedule air?"
-
----
-
-### 🔁 Executive Revision Loop
-
-Rejected schedules receive feedback and are regenerated.
-
-The workflow resembles a real television organization:
-
-Showrunner → Executive Notes → Revision → Approval
-
-Instead of failing immediately, the agent attempts multiple revisions before terminating.
-
----
-
-## System Architecture
+Most AI scheduling systems work like this:
 
 ```
-Historical Insights
-        │
-        ▼
-Network Identity
-        │
-        ▼
-Prompt Builder
-        │
-        ▼
-Qwen 2.5 14B (Ollama)
-        │
-        ▼
-Pydantic Models
-        │
-        ▼
-Structural Validator
-        │
-        ▼
-Editorial Review
-        │
-        ▼
-XML Export
+Input Programs
+↓
+LLM
+↓
+Output Schedule
 ```
+
+This approach often leads to:
+
+* Hallucinated program selections
+* Random thematic shifts
+* Poor schedule flow
+* Weak editorial consistency
+* No governance over creative decisions
+
+Television networks don't actually work this way.
+
+Schedules emerge from multiple departments with competing priorities.
+
+This project attempts to simulate that process.
 
 ---
 
-## Technology Stack
+# The Television Organization
 
-### Backend
+## 🎬 Showrunner
+
+The creative leader of the network.
+
+Responsibilities:
+
+* Defines the editorial theme of the day
+* Establishes the emotional goals
+* Creates the creative vision for the broadcast
+
+Example:
+
+> "Fantasy and Family Adventure"
+
+> "Create a day filled with imagination, wonder, optimism, and shared family experiences."
+
+---
+
+## 📚 Librarian
+
+The acquisitions and programming department.
+
+Responsibilities:
+
+* Reviews the entire program inventory
+* Curates a shortlist of suitable programs
+* Protects the integrity of the Showrunner's vision
+* Revises selections based on executive feedback
+
+The Librarian asks:
+
+> "Which programs genuinely belong in this television day?"
+
+---
+
+## 🗓️ Scheduler
+
+The operations department.
+
+Responsibilities:
+
+* Assigns approved programs to broadcast slots
+* Maintains daypart flow
+* Builds Prime Time around flagship content
+* Creates a schedule that feels intentional
+
+The Scheduler asks:
+
+> "How do we turn these ingredients into a coherent day?"
+
+---
+
+## ✅ Validator
+
+The compliance department.
+
+Responsibilities:
+
+* Ensures structural correctness
+* Verifies slot assignments
+* Prevents invalid program selections
+* Guarantees JSON integrity
+
+The Validator asks:
+
+> "Can this schedule legally exist?"
+
+---
+
+## 🏛️ Editorial Review Board
+
+The executive committee.
+
+Responsibilities:
+
+* Reviews the proposed schedule
+* Evaluates whether the experience matches the promised vision
+* Balances quality against practical constraints
+* Approves or rejects schedules for broadcast
+
+The Editorial Board asks:
+
+> "Would we actually put this on the air?"
+
+---
+
+# Workflow
+
+```
+Showrunner
+↓
+Librarian
+↓
+Scheduler
+↓
+Validator
+↓
+Editorial Review Board
+```
+
+If approved:
+
+```
+Export XML
+↓
+Broadcast Ready
+```
+
+If rejected:
+
+```
+Editorial Feedback
+↓
+Librarian Revision
+↓
+Scheduler
+↓
+Validator
+↓
+Editorial Review Board
+```
+
+The system continues iterating until an acceptable schedule is produced.
+
+---
+
+# One Unexpected Discovery
+
+During development, the system repeatedly failed.
+
+Not because of syntax errors.
+
+Not because of Python bugs.
+
+But because the agents exposed a very real television problem:
+
+## Limited Inventory.
+
+Sometimes the network simply doesn't own enough perfectly aligned content to fulfill the creative vision.
+
+This forced the agents to negotiate trade-offs:
+
+* Should a fantasy day tolerate some drama?
+* Is repetition acceptable?
+* How much compromise is realistic?
+* When is a schedule "good enough" to air?
+
+The result became less about optimization and more about organizational decision-making.
+
+---
+
+# Program Repetition
+
+Repeated program assignments are interpreted as:
+
+* Different episodes
+* Reruns
+* Alternate entries within the same franchise
+* Rotating broadcast inventory
+
+For example:
+
+```
+Lost Empire
+07:00
+10:00
+14:00
+19:00
+```
+
+does NOT necessarily mean the same episode aired four times.
+
+It may represent:
+
+```
+Lost Empire S01E03
+Lost Empire S01E07
+Lost Empire S02E01
+Lost Empire S02E08
+```
+
+This mirrors real broadcast scheduling practices.
+
+---
+
+# Technologies Used
 
 * Python 3
-* PostgreSQL
-* Docker
-
-### AI
-
 * Ollama
 * Qwen 2.5 14B
-
-### Validation
-
-* Pydantic v2
-
-### Data Access
-
-* psycopg2
-
-### Configuration
-
-* python-dotenv
+* PostgreSQL
+* Pydantic
+* XMLTV Export
 
 ---
 
-## Database Components
+# Why This Project Exists
 
-The system models a television network using:
+This project started as an experiment:
 
-### Program Catalog
+> "Can an LLM generate a television schedule?"
 
-Contains:
+It evolved into something far more interesting:
 
-* Program titles
-* Genres
-* Program types
-* Target demographics
-* Ratings information
+> "Can multiple AI agents simulate the organizational dynamics of a real television network?"
 
-### Broadcast Slots
+The answer appears to be:
 
-Defines:
+> Yes.
 
-* Hourly scheduling windows
-* Dayparts
-* Slot durations
+Not through perfection.
 
-### Viewership Metrics
-
-Stores:
-
-* Viewer counts
-* Average watch times
-* Retention rates
-* Drop-off rates
-* Advertising revenue
+But through negotiation, revision, and compromise.
 
 ---
 
-## Synthetic Dataset Generation
-
-A separate generation pipeline was used to create several years of operational broadcast data.
-
-Generated records include:
-
-### Slot Program Assignments
-
-```
-slot_program
-```
-
-Maps programs to scheduled slots.
-
-### Commercial Placements
-
-```
-slot_commercial
-```
-
-Stores commercial sequencing.
-
-### Audience Metrics
-
-```
-slot_viewership
-```
-
-Captures simulated audience behavior.
-
-The dataset can be reused for:
-
-* Data engineering projects
-* SQL analytics
-* Dashboarding
-* Machine learning experiments
-* Recommendation systems
-
----
-
-## Example Workflow
-
-```
-Load Historical Memory
-        │
-Determine Theme
-        │
-Consult Showrunner
-        │
-Generate Schedule
-        │
-Validate Structure
-        │
-Review Editorial Quality
-        │
-Approved?
- ┌──────┴──────┐
- │             │
-No            Yes
- │             │
-Revision     Export XML
- │
-Retry
-```
-
----
-
-## Motivation
-
-This project originally started as an experiment in synthetic data generation for portfolio projects involving SQL and analytics.
-
-Over time, it evolved into a question:
-
-> "Can an AI behave like a television programming department?"
-
-Rather than simply producing JSON, the system attempts to simulate the actual organizational workflow behind broadcast decision-making.
-
----
-
-## Future Directions
+# Future Improvements
 
 Potential future enhancements include:
 
-* Retrieval-Augmented Generation (RAG)
-* Catalog Librarian agents
-* Multi-agent scheduling workflows
-* Audience segmentation models
-* Recommendation engines
-* Ratings forecasting
-* Automated commercial optimization
-* Interactive scheduling dashboards
+* Episode-level scheduling
+* Agent accountability and blame assignment
+* Audience analytics integration
+* Historical performance feedback loops
+* Programming acquisition agents
+* Seasonal and holiday strategies
+* Multi-channel network support
+* Automatic XMLTV publishing
 
 ---
 
-## Repository Goals
+# Final Thought
 
-This project serves as a demonstration of:
+Television schedules are rarely perfect.
 
-* Applied AI engineering
-* System design
-* Data engineering
-* Prompt engineering
-* Validation strategies
-* Human-in-the-loop style workflows
+They are products of limited inventory, competing priorities, executive judgment, and practical compromise.
 
-It is intentionally experimental and designed as a learning platform for exploring how deterministic systems and generative models can work together.
+This project attempts to capture that reality.
+
+Because sometimes the most interesting AI systems aren't the ones that always get the right answer.
+
+They're the ones that argue their way toward a decision.
 
 ---
 
-## License
-
-This repository is intended for educational and portfolio purposes.
+*"Would we actually put this on the air tomorrow?"*

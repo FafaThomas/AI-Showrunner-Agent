@@ -31,30 +31,11 @@ from app.services.xml_exporter import (
     save_xml,
 )
 
+from app.agents.showrunner_agent import (
+    generate_editorial_vision,
+)
+
 MODEL_NAME = "qwen2.5:14b"
-
-
-def determine_theme(
-    target_date: datetime.date,
-    network_identity: dict,
-) -> str:
-    """
-    Determine the editorial theme for the day.
-    """
-
-    weekday = target_date.strftime("%A")
-
-    if weekday == "Saturday":
-        return "Weekend Adventure"
-
-    if weekday == "Sunday":
-        return "Family Relaxation"
-
-    return (
-        f"{network_identity['name']} "
-        f"Weekday Programming"
-    )
-
 
 def generate_schedule(
     target_date: datetime.date,
@@ -69,9 +50,7 @@ def generate_schedule(
 
         slots = load_slots(cur)
 
-        from app.services.retriever import (
-            retrieve_programs,
-        )
+
 
         historical_insights = (
             load_historical_insights(cur)
@@ -81,39 +60,21 @@ def generate_schedule(
             load_network_identity()
         )
 
-        theme = determine_theme(
+        vision = generate_editorial_vision(
             target_date,
             network_identity,
         )
+
+        theme = vision.theme
 
         print(
             f"Theme selected: {theme}"
         )
 
-        
-        candidate_programs = []
-
-        seen = set()
-
-        for slot in slots:
-
-            retrieved = retrieve_programs(
-                programs,
-                theme,
-                slot,
-            )
-
-            for program in retrieved:
-
-                key = program["program_key"]
-
-                if key not in seen:
-
-                    candidate_programs.append(
-                        program
-                    )
-
-                    seen.add(key)
+        print(
+            f"Editorial Brief: "
+            f"{vision.editorial_brief}"
+        )
 
 
         MAX_RETRIES = 5
@@ -140,11 +101,13 @@ def generate_schedule(
                     network_identity["identity"]
                 ),
 
-                theme=theme,
+                theme=vision.theme,
+
+                editorial_brief=(vision.editorial_brief),
 
                 slots=slots,
 
-                programs=candidate_programs,
+                programs=programs,
 
                 historical_insights=(
                     historical_insights

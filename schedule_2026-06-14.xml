@@ -1,0 +1,147 @@
+<schedule date="2026-06-14">
+    <theme>The Flow of the Day</theme>
+    <slot>
+        <slot_key>1</slot_key>
+        <time>00:00-01:00</time>
+        <program_key>5</program_key>
+        <reason>Experimental niche content to cater to overnight viewers.</reason>
+    </slot>
+    <slot>
+        <slot_key>2</slot_key>
+        <time>01:00-02:00</time>
+        <program_key>6</program_key>
+        <reason>Continuing experimental programming for niche audiences in the early morning hours.</reason>
+    </slot>
+    <slot>
+        <slot_key>3</slot_key>
+        <time>02:00-03:00</time>
+        <program_key>1</program_key>
+        <reason>Rerun of a popular series to keep overnight viewers engaged.</reason>
+    </slot>
+    <slot>
+        <slot_key>4</slot_key>
+        <time>03:00-04:00</time>
+        <program_key>2</program_key>
+        <reason>Experimental content for the early morning hours, catering to those who need light entertainment before sleep.</reason>
+    </slot>
+    <slot>
+        <slot_key>5</slot_key>
+        <time>04:00-05:00</time>
+        <program_key>13</program_key>
+        <reason>Informative and uplifting programming to set the tone for the morning hours.</reason>
+    </slot>
+    <slot>
+        <slot_key>6</slot_key>
+        <time>05:00-06:00</time>
+        <program_key>7</program_key>
+        <reason>Morning show with light entertainment and practical information to start the day positively.</reason>
+    </slot>
+    <slot>
+        <slot_key>7</slot_key>
+        <time>06:00-07:00</time>
+        <program_key>14</program_key>
+        <reason>Engaging morning programming that keeps viewers informed and entertained.</reason>
+    </slot>
+    <slot>
+        <slot_key>8</slot_key>
+        <time>07:00-08:00</time>
+        <program_key>9</program_key>
+        <reason>Informative segments to keep the audience engaged as they prepare for their day.</reason>
+    </slot>
+    <slot>
+        <slot_key>9</slot_key>
+        <time>08:00-09:00</time>
+        <program_key>15</program_key>
+        <reason>Continuing informative and family-friendly content that sets a positive tone.</reason>
+    </slot>
+    <slot>
+        <slot_key>10</slot_key>
+        <time>09:00-10:00</time>
+        <program_key>26</program_key>
+        <reason>Comfort programming to cater to families and casual viewers looking for entertainment during the day.</reason>
+    </slot>
+    <slot>
+        <slot_key>11</slot_key>
+        <time>10:00-11:00</time>
+        <program_key>27</program_key>
+        <reason>Engaging afternoon content that keeps viewers entertained and relaxed.</reason>
+    </slot>
+    <slot>
+        <slot_key>12</slot_key>
+        <time>11:00-12:00</time>
+        <program_key>34</program_key>
+        <reason>Informative segments to keep the audience engaged as they prepare for their afternoon activities.</reason>
+    </slot>
+    <slot>
+        <slot_key>13</slot_key>
+        <time>12:00-13:00</time>
+        <program_key>25</program_key>
+        <reason>Light entertainment and family-friendly content for those taking a break during the day.</reason>
+    </slot>
+    <slot>
+        <slot_key>14</slot_key>
+        <time>13:00-14:00</time>
+        <program_key>8</program_key>
+        <reason>Family-oriented programming to keep viewers entertained during afternoon hours.</reason>
+    </slot>
+    <slot>
+        <slot_key>15</slot_key>
+        <time>14:00-15:00</time>
+        <program_key>36</program_key>
+        <reason>Comfortable, engaging content that provides a relaxing atmosphere for viewers.</reason>
+    </slot>
+    <slot>
+        <slot_key>16</slot_key>
+        <time>15:00-16:00</time>
+        <program_key>29</program_key>
+        <reason>Engaging programming to keep the audience entertained as they transition into evening activities.</reason>
+    </slot>
+    <slot>
+        <slot_key>17</slot_key>
+        <time>16:00-17:00</time>
+        <program_key>40</program_key>
+        <reason>Family-friendly content for those looking for light entertainment in the late afternoon.</reason>
+    </slot>
+    <slot>
+        <slot_key>18</slot_key>
+        <time>17:00-18:00</time>
+        <program_key>39</program_key>
+        <reason>Informative and engaging programming to keep viewers entertained as they prepare for evening activities.</reason>
+    </slot>
+    <slot>
+        <slot_key>19</slot_key>
+        <time>18:00-19:00</time>
+        <program_key>42</program_key>
+        <reason>Flagship content that sets the emotional tone for the evening hours and draws viewers in with strong storytelling.</reason>
+    </slot>
+    <slot>
+        <slot_key>20</slot_key>
+        <time>19:00-20:00</time>
+        <program_key>37</program_key>
+        <reason>Continuing flagship content that builds on emotional investment from the evening hours.</reason>
+    </slot>
+    <slot>
+        <slot_key>21</slot_key>
+        <time>20:00-21:00</time>
+        <program_key>45</program_key>
+        <reason>Strong, engaging flagship programming to maintain audience engagement and identity during prime time.</reason>
+    </slot>
+    <slot>
+        <slot_key>22</slot_key>
+        <time>21:00-22:00</time>
+        <program_key>38</program_key>
+        <reason>Continuing flagship content that keeps the emotional investment high as viewers approach late night hours.</reason>
+    </slot>
+    <slot>
+        <slot_key>23</slot_key>
+        <time>22:00-23:00</time>
+        <program_key>56</program_key>
+        <reason>Engaging programming to cater to mature audiences during the transition into late night viewing.</reason>
+    </slot>
+    <slot>
+        <slot_key>24</slot_key>
+        <time>23:00-00:00</time>
+        <program_key>17</program_key>
+        <reason>Reruns or experimental content for a winding down period, catering to those who stay up late.</reason>
+    </slot>
+</schedule>

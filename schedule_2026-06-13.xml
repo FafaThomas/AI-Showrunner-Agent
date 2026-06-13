@@ -1,0 +1,147 @@
+<schedule date="2026-06-13">
+    <theme>A Day of Discovery and Reflection</theme>
+    <slot>
+        <slot_key>1</slot_key>
+        <time>00:00-01:00</time>
+        <program_key>5</program_key>
+        <reason>Start the day with a niche, experimental choice to capture the late-night audience.</reason>
+    </slot>
+    <slot>
+        <slot_key>2</slot_key>
+        <time>01:00-02:00</time>
+        <program_key>7</program_key>
+        <reason>Continue with an informative and reflective piece suitable for overnight viewing.</reason>
+    </slot>
+    <slot>
+        <slot_key>3</slot_key>
+        <time>02:00-03:00</time>
+        <program_key>10</program_key>
+        <reason>Offer a rerun of a family-friendly series to cater to the early morning audience.</reason>
+    </slot>
+    <slot>
+        <slot_key>4</slot_key>
+        <time>03:00-04:00</time>
+        <program_key>8</program_key>
+        <reason>Provide experimental and niche content for those who stay up late.</reason>
+    </slot>
+    <slot>
+        <slot_key>5</slot_key>
+        <time>04:00-05:00</time>
+        <program_key>13</program_key>
+        <reason>Start the morning with a light-hearted, accessible program to transition into daytime viewing.</reason>
+    </slot>
+    <slot>
+        <slot_key>6</slot_key>
+        <time>05:00-06:00</time>
+        <program_key>23</program_key>
+        <reason>Continue with an informative and uplifting segment for the morning audience.</reason>
+    </slot>
+    <slot>
+        <slot_key>7</slot_key>
+        <time>06:00-07:00</time>
+        <program_key>14</program_key>
+        <reason>Ease into the morning with a comforting, family-friendly show to start the day positively.</reason>
+    </slot>
+    <slot>
+        <slot_key>8</slot_key>
+        <time>07:00-08:00</time>
+        <program_key>21</program_key>
+        <reason>Offer an engaging and informative program that sets a positive tone for the morning.</reason>
+    </slot>
+    <slot>
+        <slot_key>9</slot_key>
+        <time>08:00-09:00</time>
+        <program_key>4</program_key>
+        <reason>Continue with accessible and uplifting content to keep the audience engaged in the early morning hours.</reason>
+    </slot>
+    <slot>
+        <slot_key>10</slot_key>
+        <time>09:00-10:00</time>
+        <program_key>6</program_key>
+        <reason>Provide a comfortable, family-friendly show that caters to those starting their day.</reason>
+    </slot>
+    <slot>
+        <slot_key>11</slot_key>
+        <time>10:00-11:00</time>
+        <program_key>22</program_key>
+        <reason>Offer an informative and optimistic program to maintain the positive morning flow.</reason>
+    </slot>
+    <slot>
+        <slot_key>12</slot_key>
+        <time>11:00-12:00</time>
+        <program_key>17</program_key>
+        <reason>Continue with a family-friendly show that is easy on the eyes and ears for casual viewers.</reason>
+    </slot>
+    <slot>
+        <slot_key>13</slot_key>
+        <time>12:00-13:00</time>
+        <program_key>9</program_key>
+        <reason>Ease into the afternoon with a light-hearted, family-friendly show that caters to all ages.</reason>
+    </slot>
+    <slot>
+        <slot_key>14</slot_key>
+        <time>13:00-14:00</time>
+        <program_key>2</program_key>
+        <reason>Offer an engaging and comforting program for those looking for a relaxed afternoon viewing experience.</reason>
+    </slot>
+    <slot>
+        <slot_key>15</slot_key>
+        <time>14:00-15:00</time>
+        <program_key>18</program_key>
+        <reason>Provide a family-friendly show that maintains the afternoons’ light-hearted and comforting tone.</reason>
+    </slot>
+    <slot>
+        <slot_key>16</slot_key>
+        <time>15:00-16:00</time>
+        <program_key>3</program_key>
+        <reason>Continue with an accessible, feel-good program for a smooth transition into evening viewing.</reason>
+    </slot>
+    <slot>
+        <slot_key>17</slot_key>
+        <time>16:00-17:00</time>
+        <program_key>20</program_key>
+        <reason>Ease into the prime time block with an engaging and family-friendly show that builds anticipation for flagship content.</reason>
+    </slot>
+    <slot>
+        <slot_key>18</slot_key>
+        <time>17:00-18:00</time>
+        <program_key>24</program_key>
+        <reason>Continue with a program that sets the stage for emotional investment in prime time programming.</reason>
+    </slot>
+    <slot>
+        <slot_key>19</slot_key>
+        <time>18:00-19:00</time>
+        <program_key>31</program_key>
+        <reason>Start prime time with flagship content that captures the audience’s attention and builds emotional investment.</reason>
+    </slot>
+    <slot>
+        <slot_key>20</slot_key>
+        <time>19:00-20:00</time>
+        <program_key>16</program_key>
+        <reason>Continue with strong, engaging prime time programming to maintain viewer engagement and emotional connection.</reason>
+    </slot>
+    <slot>
+        <slot_key>21</slot_key>
+        <time>20:00-21:00</time>
+        <program_key>32</program_key>
+        <reason>Offer flagship content that reinforces the station’s identity and showcases its strongest programming.</reason>
+    </slot>
+    <slot>
+        <slot_key>22</slot_key>
+        <time>21:00-22:00</time>
+        <program_key>15</program_key>
+        <reason>End prime time with a strong emotional peak, ensuring viewers feel satisfied and connected to the content.</reason>
+    </slot>
+    <slot>
+        <slot_key>23</slot_key>
+        <time>22:00-23:00</time>
+        <program_key>19</program_key>
+        <reason>Ease into late night viewing with mature and reflective programming that allows viewers to unwind.</reason>
+    </slot>
+    <slot>
+        <slot_key>24</slot_key>
+        <time>23:00-00:00</time>
+        <program_key>11</program_key>
+        <reason>End the day with a niche, experimental choice that caters to the late-night audience and completes the full day’s cycle.</reason>
+    </slot>
+</schedule>

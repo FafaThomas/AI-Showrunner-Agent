@@ -1,297 +1,86 @@
 # app/agents/showrunner.py
 
-import datetime
 import json
 import ollama
 
-from app.database.db import (
-    connect_db,
-    load_programs,
-    load_slots,
-    load_historical_insights,
-    load_network_identity,
+from app.models.showrunner import (
+    EditorialVision,
 )
-
-from app.models.schedule import DailySchedule
 
 from app.services.prompt_builder import (
     build_showrunner_prompt,
 )
 
-from app.services.validator import (
-    validate_schedule,
-)
-
-from app.services.editorial_review import (
-    review_schedule,
-)
-
-from app.services.xml_exporter import (
-    schedule_to_xml,
-    save_xml,
-)
-
-from app.agents.showrunner_agent import (
-    generate_editorial_vision,
-)
-
 MODEL_NAME = "qwen2.5:14b"
 
-def generate_schedule(
-    target_date: datetime.date,
+
+def generate_editorial_vision(
+    target_date,
+    network_identity,
+    historical_insights,
 ):
-    conn = connect_db()
-    cur = conn.cursor()
+    """
+    Generate the editorial vision
+    for the broadcast day.
+    """
 
-    try:
-        print("Loading memory...")
+    prompt = build_showrunner_prompt(
+        target_date=target_date,
 
-        programs = load_programs(cur)
+        network_identity=network_identity,
 
-        slots = load_slots(cur)
-
-
-
-        historical_insights = (
-            load_historical_insights(cur)
-        )
-
-        network_identity = (
-            load_network_identity()
-        )
-
-        vision = generate_editorial_vision(
-            target_date,
-            network_identity,
-        )
-
-        theme = vision.theme
-
-        print(
-            f"Theme selected: {theme}"
-        )
-
-        print(
-            f"Editorial Brief: "
-            f"{vision.editorial_brief}"
-        )
-
-
-        MAX_RETRIES = 5
-
-        feedback = None
-
-        for attempt in range(
-            1,
-            MAX_RETRIES + 1,
-        ):
-
-            print(
-                f"\nConsulting the Showrunner..."
-            )
-
-            print(
-                f"Attempt {attempt}/{MAX_RETRIES}"
-            )
-
-            prompt = build_showrunner_prompt(
-                target_date=target_date.isoformat(),
-
-                network_identity=(
-                    network_identity["identity"]
-                ),
-
-                theme=vision.theme,
-
-                editorial_brief=(vision.editorial_brief),
-
-                slots=slots,
-
-                programs=programs,
-
-                historical_insights=(
-                    historical_insights
-                ),
-
-                feedback=feedback,
-            )
-
-            raw_response = ollama.chat(
-                model=MODEL_NAME,
-                format="json",
-                messages=[
-                    {
-                        "role": "user",
-                        "content": prompt,
-                    }
-                ],
-            )["message"]["content"]
-
-            print("\n" + "=" * 80)
-            print("RAW QWEN RESPONSE")
-            print("=" * 80)
-            print(raw_response)
-            print("=" * 80 + "\n")
-            try:
-                data = json.loads(
-                    raw_response
-                )
-
-                schedule = (
-                    DailySchedule.model_validate(
-                        data
-                    )
-                )
-
-            except Exception as e:
-                feedback = (
-                    f"Your response could not "
-                    f"be parsed.\n\n"
-                    f"Error:\n{str(e)}"
-                )
-
-                print(
-                    "Parsing failed:"
-                )
-
-                print(
-                    feedback
-                )
-
-                continue
-
-            is_valid, feedback = (
-                validate_schedule(
-                    schedule,
-                    slots,
-                    programs,
-                )
-            )
-
-            if not is_valid:
-
-                print(
-                    "Structural validation failed."
-                )
-
-                print(feedback)
-
-                continue
-
-            print(
-                "Structural validation passed."
-            )
-
-            editorial_ok, notes = review_schedule(
-                schedule,
-                programs,
-                theme,
-            )
-
-            if not editorial_ok:
-
-                feedback = (
-                    "Editorial Review Failed:\n"
-                    + "\n".join(notes)
-                )
-
-                print("\nEditorial Review Failed:")
-
-                for note in notes:
-                    print(f"- {note}")
-
-                continue
-
-            print(
-                "Editorial review passed."
-            )
-
-            break
-
-        else:
-
-            raise RuntimeError(
-                "Showrunner failed after "
-                f"{MAX_RETRIES} attempts."
-            )
-
-
-        xml = schedule_to_xml(
-            schedule,
-            target_date.isoformat(),
-        )
-
-        filename = (
-            f"schedule_"
-            f"{target_date.isoformat()}.xml"
-        )
-
-        save_xml(
-            xml,
-            filename,
-        )
-
-        print(
-            "\nShowrunner completed."
-        )
-
-        print(
-            f"Saved to {filename}"
-        )
-
-        return schedule, programs
-
-    finally:
-        cur.close()
-        conn.close()
-
-
-def main():
-    target_date = datetime.date.today()
-
-    schedule, programs = generate_schedule(
-        target_date
+        historical_insights=historical_insights,
     )
 
-    print()
+    raw_response = ollama.chat(
+        model=MODEL_NAME,
+        format="json",
+        messages=[
+            {
+                "role": "user",
+                "content": prompt,
+            }
+        ],
+    )["message"]["content"]
 
-    print(
-        "Today's Theme:"
+    print("\n" + "=" * 80)
+    print("SHOWRUNNER RESPONSE")
+    print("=" * 80)
+    print(raw_response)
+    print("=" * 80)
+
+    data = json.loads(
+        raw_response
     )
 
-    print(
-        schedule.theme
+    return EditorialVision.model_validate(
+        data
     )
-
-    print()
-
-    print("\nEDITORIAL AUDIT")
-    print("=" * 120)
-
-    program_lookup = {
-        p["program_key"]: p
-        for p in programs
-    }
-
-    for slot in schedule.slots:
-
-        program = program_lookup[
-            slot.program_key
-        ]
-
-        print(
-            f"{slot.time:<12}"
-            f"{program['title']:<35}"
-            f"{program['genre']:<15}"
-            f"{program['program_type']:<12}"
-        )
-
-        print(
-            f"Reason: {slot.reason}"
-        )
-
-        print("-" * 120)
-
 
 if __name__ == "__main__":
-    main()
+
+    import datetime
+
+    vision = generate_editorial_vision(
+        target_date=datetime.date.today(),
+
+        network_identity="""
+Family-focused entertainment network
+that values optimism, discovery,
+and emotional storytelling.
+""",
+
+        historical_insights=[
+            "Adventure programs perform well on weekends.",
+            "Families prefer uplifting content on Sundays.",
+            "Prime Time viewers engage strongly with emotional narratives.",
+        ],
+    )
+
+    print("\nEDITORIAL VISION")
+
+    print(
+        vision.model_dump_json(
+            indent=4,
+        )
+    )

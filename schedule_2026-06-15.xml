@@ -1,0 +1,147 @@
+<schedule date="2026-06-15">
+    <theme>Fantasy Adventure</theme>
+    <slot>
+        <slot_key>1</slot_key>
+        <time>00:00-01:00</time>
+        <program_key>12</program_key>
+        <reason>Starting with a fantasy series suitable for an adult audience sets the stage for the day's theme.</reason>
+    </slot>
+    <slot>
+        <slot_key>2</slot_key>
+        <time>01:00-02:00</time>
+        <program_key>53</program_key>
+        <reason>Following up with a family-friendly fantasy cinema to broaden the appeal and introduce elements of adventure.</reason>
+    </slot>
+    <slot>
+        <slot_key>3</slot_key>
+        <time>02:00-03:00</time>
+        <program_key>140</program_key>
+        <reason>Using another teen-targeted fantasy cinema to build anticipation for the day's theme.</reason>
+    </slot>
+    <slot>
+        <slot_key>4</slot_key>
+        <time>03:00-04:00</time>
+        <program_key>64</program_key>
+        <reason>Switching to a comedy to provide lighter content before moving into morning programming.</reason>
+    </slot>
+    <slot>
+        <slot_key>5</slot_key>
+        <time>04:00-05:00</time>
+        <program_key>139</program_key>
+        <reason>A teen-friendly fantasy cinema continues the build-up towards daytime and family-oriented content.</reason>
+    </slot>
+    <slot>
+        <slot_key>6</slot_key>
+        <time>05:00-06:00</time>
+        <program_key>7</program_key>
+        <reason>Sci-fi series for early morning, bridging from night to day with a slight departure in genre before transitioning back.</reason>
+    </slot>
+    <slot>
+        <slot_key>7</slot_key>
+        <time>06:00-07:00</time>
+        <program_key>81</program_key>
+        <reason>A family sitcom for morning viewers looking for light-hearted entertainment and a fantasy-themed setup.</reason>
+    </slot>
+    <slot>
+        <slot_key>8</slot_key>
+        <time>07:00-08:00</time>
+        <program_key>53</program_key>
+        <reason>Continuing with family-friendly content, providing continuity from morning to afternoon.</reason>
+    </slot>
+    <slot>
+        <slot_key>9</slot_key>
+        <time>08:00-09:00</time>
+        <program_key>12</program_key>
+        <reason>Switching back to fantasy series for adults as the day progresses and families move on.</reason>
+    </slot>
+    <slot>
+        <slot_key>10</slot_key>
+        <time>09:00-10:00</time>
+        <program_key>81</program_key>
+        <reason>Maintaining family-friendly content in the morning to keep viewers engaged before transitioning to afternoon programming.</reason>
+    </slot>
+    <slot>
+        <slot_key>11</slot_key>
+        <time>10:00-11:00</time>
+        <program_key>64</program_key>
+        <reason>Light comedy for casual viewing and a break from more intense content, preparing viewers for the prime time block.</reason>
+    </slot>
+    <slot>
+        <slot_key>12</slot_key>
+        <time>11:00-12:00</time>
+        <program_key>53</program_key>
+        <reason>A fantasy cinema that appeals to families and builds up excitement towards the evening.</reason>
+    </slot>
+    <slot>
+        <slot_key>13</slot_key>
+        <time>12:00-13:00</time>
+        <program_key>7</program_key>
+        <reason>Sci-fi series for midday viewing, continuing the exploration of different fantasy elements.</reason>
+    </slot>
+    <slot>
+        <slot_key>14</slot_key>
+        <time>13:00-14:00</time>
+        <program_key>81</program_key>
+        <reason>Maintaining family-friendly content as viewers transition from lunch to afternoon programming.</reason>
+    </slot>
+    <slot>
+        <slot_key>15</slot_key>
+        <time>14:00-15:00</time>
+        <program_key>64</program_key>
+        <reason>Light comedy for casual viewing, providing a contrast and a break before the prime time block.</reason>
+    </slot>
+    <slot>
+        <slot_key>16</slot_key>
+        <time>15:00-16:00</time>
+        <program_key>7</program_key>
+        <reason>Sci-fi series as afternoon content, preparing viewers for more intense fantasy elements in prime time.</reason>
+    </slot>
+    <slot>
+        <slot_key>17</slot_key>
+        <time>16:00-17:00</time>
+        <program_key>81</program_key>
+        <reason>Family sitcom to provide lighter entertainment and a transition into evening programming.</reason>
+    </slot>
+    <slot>
+        <slot_key>18</slot_key>
+        <time>17:00-18:00</time>
+        <program_key>53</program_key>
+        <reason>Fantasy cinema that appeals to families, setting the stage for prime time block and emotional investment in fantasy content.</reason>
+    </slot>
+    <slot>
+        <slot_key>19</slot_key>
+        <time>18:00-19:00</time>
+        <program_key>64</program_key>
+        <reason>Light comedy as an anchor program before moving into the evening's flagship content.</reason>
+    </slot>
+    <slot>
+        <slot_key>20</slot_key>
+        <time>19:00-20:00</time>
+        <program_key>53</program_key>
+        <reason>Fantasy cinema to provide a strong emotional centerpiece for prime time, appealing to families and engaging viewers deeply.</reason>
+    </slot>
+    <slot>
+        <slot_key>21</slot_key>
+        <time>20:00-21:00</time>
+        <program_key>7</program_key>
+        <reason>Sci-fi series as part of the evening's flagship content, providing a strong emotional investment in fantasy themes.</reason>
+    </slot>
+    <slot>
+        <slot_key>22</slot_key>
+        <time>21:00-22:00</time>
+        <program_key>81</program_key>
+        <reason>Family sitcom to provide lighter entertainment and a contrast before moving into late night programming.</reason>
+    </slot>
+    <slot>
+        <slot_key>23</slot_key>
+        <time>22:00-23:00</time>
+        <program_key>64</program_key>
+        <reason>Light comedy for wind-down viewing as viewers transition from evening to nighttime programming.</reason>
+    </slot>
+    <slot>
+        <slot_key>24</slot_key>
+        <time>23:00-00:00</time>
+        <program_key>7</program_key>
+        <reason>Sci-fi series to continue the fantasy theme into late night, providing a strong end to the day's programming.</reason>
+    </slot>
+</schedule>

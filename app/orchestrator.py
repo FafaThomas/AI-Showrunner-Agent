@@ -257,7 +257,7 @@ def orchestrate(
 def main():
 
     schedule = orchestrate(
-        datetime.date.today()
+        datetime.date.today() + datetime.timedelta(days=1)
     )
 
     print(

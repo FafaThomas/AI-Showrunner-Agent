@@ -58,6 +58,20 @@ Only use IDs listed above.
 Never invent program IDs.
 
 ==================================================
+CINEMA GUIDELINES
+==================================================
+
+Cinema programs are special presentations.
+
+If you choose to schedule a Cinema program:
+
+- Schedule it as one uninterrupted two-slot block.
+
+- Do not reuse that Cinema title elsewhere in the day.
+
+Series programs may repeat throughout the day because repeated appearances may represent different episodes.
+
+==================================================
 AVAILABLE SLOTS
 ==================================================
 
@@ -120,6 +134,37 @@ Do not simply rotate genres.
 
 Think like an experienced television scheduler.
 
+
+==================================================
+CRITICAL RULES
+==================================================
+
+- Return EXACTLY {slot_count} slots.
+- Use every slot exactly once.
+- Use ONLY valid slot_key values.
+
+- Every program_key MUST come from the VALID PROGRAM KEYS listed above.
+- Never invent program IDs.
+
+- If a Cinema program is used, schedule it as one uninterrupted two-slot block.
+- Do not reuse Cinema titles elsewhere in the day.
+
+- Return valid JSON only.
+
+==================================================
+REVISION NOTES
+==================================================
+
+{revision_notes}
+
+Remember:
+
+The editorial vision has already been decided.
+
+The catalog has already been curated.
+
+Your job is simply to create the best possible television day from the tools you have been given.
+
 ==================================================
 OUTPUT FORMAT
 ==================================================
@@ -142,36 +187,3 @@ Use EXACTLY this structure:
         }}
     ]
 }}
-
-==================================================
-CRITICAL RULES
-==================================================
-
-- Return EXACTLY {slot_count} slots.
-- Use every slot exactly once.
-- Use ONLY valid slot_key values.
-
-- The Librarian-approved programs listed above are the ONLY programs you are allowed to schedule.
-- Every program_key MUST be selected from the VALID PROGRAM KEYS listed above.
-- Any other program_key is INVALID, even if it exists elsewhere in the network catalog.
-
-- Do NOT invent programs.
-- Do NOT invent slots.
-- Return valid JSON.
-- JSON ONLY.
-
-Failure to follow these rules will result in the schedule being rejected and regenerated.
-
-==================================================
-REVISION NOTES
-==================================================
-
-{revision_notes}
-
-Remember:
-
-The editorial vision has already been decided.
-
-The catalog has already been curated.
-
-Your job is simply to create the best possible television day from the tools you have been given.

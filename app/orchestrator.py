@@ -246,7 +246,28 @@ def orchestrate(
             f"{filename}"
         )
 
-        return schedule
+        return {
+            "approved": True,
+
+            "target_date": target_date.isoformat(),
+
+            "theme": vision.theme,
+
+            "editorial_brief": (
+                vision.editorial_brief
+            ),
+
+            "editorial_notes": (
+                decision.notes
+            ),
+
+            "schedule": [
+                slot.model_dump()
+                for slot in schedule.slots
+            ],
+
+            "xml_filename": filename,
+        }
 
     finally:
 

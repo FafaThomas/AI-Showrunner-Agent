@@ -1,0 +1,147 @@
+<schedule date="2026-06-16">
+    <theme>Mythic Journeys: A Celebration of Fantasy and Family Values</theme>
+    <slot>
+        <slot_key>1</slot_key>
+        <time>00:00-01:00</time>
+        <program_key>139</program_key>
+        <reason>Starts the day with a teen-friendly fantasy film to captivate early morning viewers and set the tone for a magical adventure.</reason>
+    </slot>
+    <slot>
+        <slot_key>2</slot_key>
+        <time>01:00-02:00</time>
+        <program_key>139</program_key>
+        <reason>Continues the teen fantasy film to engage young audiences and build anticipation for the day's mythic journey.</reason>
+    </slot>
+    <slot>
+        <slot_key>3</slot_key>
+        <time>02:00-03:00</time>
+        <program_key>134</program_key>
+        <reason>Introduces an adult fantasy cinema to attract mature viewers seeking deeper storytelling and complex narratives.</reason>
+    </slot>
+    <slot>
+        <slot_key>4</slot_key>
+        <time>03:00-04:00</time>
+        <program_key>127</program_key>
+        <reason>Shifts to a high-stakes adult fantasy series, keeping the mature audience engaged with compelling themes and storylines.</reason>
+    </slot>
+    <slot>
+        <slot_key>5</slot_key>
+        <time>04:00-05:00</time>
+        <program_key>95</program_key>
+        <reason>Presents a young adult fantasy series to offer continuity in the overnight segment, focusing on character growth and moral lessons.</reason>
+    </slot>
+    <slot>
+        <slot_key>6</slot_key>
+        <time>05:00-06:00</time>
+        <program_key>131</program_key>
+        <reason>Continues with a young adult fantasy cinema to maintain the overnight narrative arc, preparing for the morning shift.</reason>
+    </slot>
+    <slot>
+        <slot_key>7</slot_key>
+        <time>06:00-07:00</time>
+        <program_key>58</program_key>
+        <reason>Starts the day with a family-friendly drama film that sets an optimistic and heartwarming tone for the morning.</reason>
+    </slot>
+    <slot>
+        <slot_key>8</slot_key>
+        <time>07:00-08:00</time>
+        <program_key>67</program_key>
+        <reason>Offers a comedy film suitable for families to engage in lighter, uplifting entertainment and prepare viewers for an engaging day.</reason>
+    </slot>
+    <slot>
+        <slot_key>9</slot_key>
+        <time>08:00-09:00</time>
+        <program_key>127</program_key>
+        <reason>Transitions to a high-stakes fantasy series suitable for adults, maintaining continuity and setting up the afternoon's family-oriented content.</reason>
+    </slot>
+    <slot>
+        <slot_key>10</slot_key>
+        <time>09:00-10:00</time>
+        <program_key>81</program_key>
+        <reason>Introduces a sitcom series aimed at families to provide comfort and entertainment for young viewers before the afternoon's heavier content.</reason>
+    </slot>
+    <slot>
+        <slot_key>11</slot_key>
+        <time>10:00-11:00</time>
+        <program_key>34</program_key>
+        <reason>Features a romance series suitable for families, offering a gentle narrative to maintain a positive and engaging atmosphere.</reason>
+    </slot>
+    <slot>
+        <slot_key>12</slot_key>
+        <time>11:00-12:00</time>
+        <program_key>81</program_key>
+        <reason>Continues the family sitcom series to keep viewers entertained with relatable characters and situations throughout the morning.</reason>
+    </slot>
+    <slot>
+        <slot_key>13</slot_key>
+        <time>12:00-13:00</time>
+        <program_key>95</program_key>
+        <reason>Offers a young adult fantasy series to bridge the gap between morning and afternoon, preparing viewers for the emotional centerpiece of the day.</reason>
+    </slot>
+    <slot>
+        <slot_key>14</slot_key>
+        <time>13:00-14:00</time>
+        <program_key>67</program_key>
+        <reason>Provides another comedy film to lighten the mood and engage families during lunch hours, ensuring a smooth transition into the afternoon.</reason>
+    </slot>
+    <slot>
+        <slot_key>15</slot_key>
+        <time>14:00-15:00</time>
+        <program_key>34</program_key>
+        <reason>Continues with family-friendly romance series to offer comfort and continuity, ensuring a natural flow into the evening.</reason>
+    </slot>
+    <slot>
+        <slot_key>16</slot_key>
+        <time>15:00-16:00</time>
+        <program_key>95</program_key>
+        <reason>Introduces a young adult fantasy series to engage viewers with character-driven stories and moral lessons, setting the stage for prime time.</reason>
+    </slot>
+    <slot>
+        <slot_key>17</slot_key>
+        <time>16:00-17:00</time>
+        <program_key>58</program_key>
+        <reason>Continues a family-friendly drama film to offer heartwarming content and prepare viewers emotionally for the flagship prime time programming.</reason>
+    </slot>
+    <slot>
+        <slot_key>18</slot_key>
+        <time>17:00-18:00</time>
+        <program_key>67</program_key>
+        <reason>Offers another comedy film to ensure a lighter, engaging atmosphere as viewers transition into the evening and prepare for prime time.</reason>
+    </slot>
+    <slot>
+        <slot_key>19</slot_key>
+        <time>18:00-19:00</time>
+        <program_key>127</program_key>
+        <reason>Presents a high-stakes fantasy series as the emotional centerpiece of the day, delivering intense and engaging storytelling.</reason>
+    </slot>
+    <slot>
+        <slot_key>20</slot_key>
+        <time>19:00-20:00</time>
+        <program_key>134</program_key>
+        <reason>Continues with an adult fantasy cinema to maintain the emotional intensity of prime time, offering a strong narrative arc.</reason>
+    </slot>
+    <slot>
+        <slot_key>21</slot_key>
+        <time>20:00-21:00</time>
+        <program_key>95</program_key>
+        <reason>Introduces another young adult fantasy series to offer continuity and prepare viewers for the late night transition.</reason>
+    </slot>
+    <slot>
+        <slot_key>22</slot_key>
+        <time>21:00-22:00</time>
+        <program_key>139</program_key>
+        <reason>Presents a teen-friendly fantasy film as the emotional wind-down of prime time, offering lighter storytelling for late viewers.</reason>
+    </slot>
+    <slot>
+        <slot_key>23</slot_key>
+        <time>22:00-23:00</time>
+        <program_key>127</program_key>
+        <reason>Continues with a high-stakes adult fantasy series to maintain the mature audience engagement and prepare for late night programming.</reason>
+    </slot>
+    <slot>
+        <slot_key>24</slot_key>
+        <time>23:00-00:00</time>
+        <program_key>139</program_key>
+        <reason>Closes the day with a teen-friendly fantasy film to provide a gentle and magical end to the mythic journey of the day.</reason>
+    </slot>
+</schedule>
